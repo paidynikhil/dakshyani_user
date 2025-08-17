@@ -6,8 +6,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import SareesPage from "./pages/SareesPage";
-import NewArrivals from "./pages/newArrivalsPage";
-import LehangaPage from "./pages/lehengasPage";
+import NewArrivals from "./pages/NewArrivalsPage.tsx";
+import LehangaPage from "./pages/LehengasPage.tsx";
 
 const queryClient = new QueryClient();
 
