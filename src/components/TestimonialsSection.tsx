@@ -1,8 +1,5 @@
-import { Star } from "lucide-react";
+import { Star, Quote } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-// import testimonial1 from "@/assets/testimonial-1.jpg";
-// import testimonial2 from "@/assets/testimonial-2.jpg";
-// import testimonial3 from "@/assets/testimonial-3.jpg";
 
 const TestimonialsSection = () => {
   const testimonials = [
@@ -10,112 +7,121 @@ const TestimonialsSection = () => {
       id: 1,
       name: "Priya Sharma",
       location: "Mumbai",
-      // image: testimonial1,
       rating: 5,
       text: "Amazing quality sarees at wholesale prices! I've been ordering for my boutique for 2 years now. The collection is always fresh and the delivery is super fast.",
-      business: "Boutique Owner"
+      business: "Boutique Owner",
     },
     {
       id: 2,
       name: "Meera Patel",
-      location: "Ahmedabad", 
-      // image: testimonial2,
+      location: "Ahmedabad",
       rating: 5,
       text: "Dakshyani has the best bridal lehengas collection. My customers always love the quality and designs. Highly recommend for wholesale business!",
-      business: "Reseller"
+      business: "Reseller",
     },
     {
       id: 3,
       name: "Kavya Reddy",
       location: "Hyderabad",
-      // image: testimonial3,
       rating: 5,
       text: "Excellent customer service and genuine wholesale rates. The WhatsApp support is very helpful. I've grown my business significantly with their products.",
-      business: "Fashion Retailer"
+      business: "Fashion Retailer",
     },
     {
       id: 4,
       name: "Anjali Singh",
       location: "Delhi",
-      // image: testimonial1,
       rating: 5,
       text: "Best quality silk sarees at unbeatable prices. The variety is amazing and new stock comes every week. Perfect for resellers like me.",
-      business: "Online Seller"
-    }
+      business: "Online Seller",
+    },
   ];
 
   const stats = [
-    { number: "1,00,000+", label: "Happy Resellers" },
+    { number: "1,00,000+", label: "Happy Online Customers" },
     { number: "55,000+", label: "Products Sold" },
     { number: "170+", label: "Cities Covered" },
-    { number: "98%", label: "Customer Satisfaction" }
+    { number: "98%", label: "Customer Satisfaction" },
   ];
 
   return (
-    <section id="testimonials" className="section-padding bg-muted">
-      <div className="container mx-auto">
+    <section id="testimonials" className="py-20 bg-gradient-to-b from-white to-muted/50">
+      {/* remove max-width container for scrollable area */}
+      <div className="w-full max-w-screen-xl mx-auto px-3 sm:px-6">
+        {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="section-title">What Our Customers Say</h2>
-          <p className="section-subtitle">
-            Hear from thousands of satisfied resellers and boutique owners who trust Dakshyani
+          <h2 className="text-3xl md:text-5xl font-playfair font-bold text-primary mb-3">
+            What Our Customers Say
+          </h2>
+          <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
+            Hear from thousands of satisfied Online Customers and boutique owners who trust Dakshyani.
           </p>
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
-          {stats.map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary font-playfair mb-2">
-                {stat.number}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-14">
+          {stats.map((s, i) => (
+            <div key={i} className="text-center">
+              <div className="text-2xl md:text-4xl font-bold text-primary font-playfair mb-1">
+                {s.number}
               </div>
-              <div className="text-muted-foreground">{stat.label}</div>
+              <div className="text-muted-foreground text-sm md:text-base">{s.label}</div>
             </div>
           ))}
         </div>
 
-        {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {testimonials.map((testimonial) => (
-            <Card key={testimonial.id} className="h-full">
-              <CardContent className="p-6 text-center">
-                <img
-                  // src={testimonial.image}
-                  alt={testimonial.name}
-                  className="w-16 h-16 rounded-full mx-auto mb-4 object-cover"
-                />
-                
-                <div className="flex justify-center mb-3">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-secondary text-secondary" />
-                  ))}
-                </div>
+        {/* Testimonials — scrollable on mobile */}
+        <div className="relative">
+          <div
+            className="
+              flex md:grid md:grid-cols-2 lg:grid-cols-4 
+              gap-4 
+              overflow-x-auto md:overflow-visible 
+              snap-x snap-mandatory 
+              scrollbar-hide 
+              pb-3
+              -mx-3 px-3
+            "
+          >
+            {testimonials.map((t) => (
+              <Card
+                key={t.id}
+                className="
+                  min-w-[85%] xs:min-w-[75%] sm:min-w-[60%] md:min-w-0
+                  flex-shrink-0
+                  snap-start
+                  bg-white
+                  border border-primary/10
+                  shadow-sm hover:shadow-md
+                  rounded-2xl
+                  transition-all
+                  duration-300
+                "
+              >
+                <CardContent className="p-5 text-center relative">
+                  <Quote className="absolute top-3 left-3 w-5 h-5 text-primary/30" />
+                  <Quote className="absolute bottom-3 right-3 w-5 h-5 text-primary/20 rotate-180" />
 
-                <p className="text-sm text-muted-foreground mb-4 italic">
-                  "{testimonial.text}"
-                </p>
+                  <div className="flex justify-center mb-2">
+                    {[...Array(t.rating)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-secondary text-secondary" />
+                    ))}
+                  </div>
 
-                <div>
-                  <h4 className="font-semibold text-foreground">{testimonial.name}</h4>
-                  <p className="text-xs text-primary font-medium">{testimonial.business}</p>
-                  <p className="text-xs text-muted-foreground">{testimonial.location}</p>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+                  <p className="text-[13px] sm:text-sm text-muted-foreground mb-3 italic leading-relaxed">
+                    “{t.text}”
+                  </p>
 
-        {/* CTA */}
-        {/* <div className="text-center mt-12">
-          <p className="text-lg mb-4">Join thousands of successful resellers today!</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="btn-hero px-6 py-3 rounded-lg font-semibold">
-              Start Wholesale Business
-            </button>
-            <button className="btn-whatsapp px-6 py-3 rounded-lg font-semibold">
-              Get Customer Reviews
-            </button>
+                  <div>
+                    <h4 className="font-semibold text-sm sm:text-base text-foreground">{t.name}</h4>
+                    <p className="text-xs text-primary font-medium">{t.business}</p>
+                    <p className="text-xs text-muted-foreground">{t.location}</p>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
-        </div> */}
+        </div>
       </div>
     </section>
   );

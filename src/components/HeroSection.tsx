@@ -14,25 +14,25 @@ const HeroSection = () => {
     {
       image: heroSaree1,
       title: "Premium Sarees Collection",
-      subtitle: "Wholesale Prices • Daily New Stock",
-      description: "Discover exquisite traditional sarees at unbeatable wholesale rates"
+      subtitle: "• Finest Sarees in Silk, Cotton, Georgette & More",
+      description: "Explore our timeless saree range — from luxurious silks to elegant cottons, crafted to enhance every occasion."
     },
     {
       image: heroSaree2,
       title: "Designer Lehengas",
-      subtitle: "Bridal & Party Wear",
-      description: "Stunning designer lehengas for your special occasions"
+      subtitle: "• Bridal | Party | Festive Wear",
+      description: "Turn every celebration into a grand affair with our handcrafted designer lehengas, blending tradition with modern elegance."
     },
     {
       image: heroSaree3,
       title: "Dresses",
-      subtitle: "Bridal & Party Wear",
-      description: "Stunning designer lehengas for your special occasions"
+      subtitle: "• Ethnic | Indo-Western | Casual Styles",
+      description: "Discover chic ethnic and Indo-Western dresses that bring together comfort, grace, and contemporary fashion."
     }
   ];
 
   const trustIndicators = [
-    { icon: Users, text: "1,00,000+ Trusted Resellers" },
+    { icon: Users, text: "1,00,000+ Trusted Customers" },
     { icon: Truck, text: "Free Shipping on 3 Orders" },
     { icon: Zap, text: "Fast Dispatch" },
     { icon: Shield, text: "Premium Quality Assured" }

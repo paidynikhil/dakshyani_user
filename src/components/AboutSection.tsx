@@ -13,8 +13,8 @@ const AboutSection = () => {
     },
     {
       icon: Users,
-      title: "1,00,000+ Resellers",
-      description: "(Trusted by lakhs of online customers nationwide",
+      title: "1,00,000+ Online Customers",
+      description: "Trusted by lakhs of online customers nationwide",
     },
     {
       icon: Truck,
@@ -34,7 +34,7 @@ const AboutSection = () => {
     {
       icon: MapPin,
       title: "Pan India Delivery",
-      description: "Serving customers across 500+ cities in India",
+      description: "Serving customers across 170+ cities in India",
     },
   ];
 
@@ -46,7 +46,7 @@ const AboutSection = () => {
     },
     {
       name: "Rama Krishna",
-      title: "CEO, Venkateshwara Silks",
+      title: "Managing Director, Dakshayani Shopping Mall",
       image: ceo1,
     },
   ];
@@ -57,7 +57,7 @@ const AboutSection = () => {
         <div className="text-center mb-12">
           <h2 className="section-title">About Dakshyani Shopping Mall</h2>
           <p className="section-subtitle">
-            Your trusted partner for premium traditional wear at wholesale prices since 1962
+            Your trusted partner for premium traditional wear and westernware since 2020
           </p>
         </div>
 
