@@ -28,17 +28,11 @@ const Footer = () => {
   const socialLinks = [
     {
       icon: Instagram,
-      name: "Nellore",
-      href: "https://www.instagram.com/dakshayanishoppingmall?igsh=MWtqbmxxcnpnMDBwMg==",
-      followers: "100 Followers",
-      color: "hover:text-pink-500",
-    },
-    {
-      icon: Instagram,
       name: "Kurnool",
       href: "https://www.instagram.com/dakshayaniiconictrend?igsh=bGNocm93Zzg3YXR4",
       followers: "6K+ Followers",
       color: "hover:text-pink-500",
+      showFollowers: true,
     },
     {
       icon: Instagram,
@@ -46,20 +40,31 @@ const Footer = () => {
       href: "https://www.instagram.com/dhakshayanichennai?igsh=MTh5dGYzcTVhdWxzYw==",
       followers: "2K+ Followers",
       color: "hover:text-pink-500",
+      showFollowers: true,
+    },
+    {
+      icon: Instagram,
+      name: "Nellore",
+      href: "https://www.instagram.com/dakshayanishoppingmall?igsh=MWtqbmxxcnpnMDBwMg==",
+      followers: "100 Followers",
+      color: "hover:text-pink-500",
+      showFollowers: true,
     },
     {
       icon: Facebook,
       name: "Facebook",
       href: "https://www.facebook.com/share/1SxB8B6W6W/",
-      followers: "75 Followers",
+      followers: "",
       color: "hover:text-blue-600",
+      showFollowers: false,
     },
     {
       icon: Youtube,
       name: "YouTube",
       href: "https://youtube.com/@dakshayanishoppingmall2025?si=u1XkXSdRftrtHUny",
-      followers: "45 Subscribers",
+      followers: "",
       color: "hover:text-red-600",
+      showFollowers: false,
     },
   ];
 
@@ -156,9 +161,11 @@ const Footer = () => {
                 >
                   <s.icon className="w-5 h-5 mb-1" />
                   <span>{s.name}</span>
-                  <span className="text-primary-foreground/60">
-                    {s.followers}
-                  </span>
+                  {s.showFollowers && (
+                    <span className="text-primary-foreground/60">
+                      {s.followers}
+                    </span>
+                  )}
                 </a>
               ))}
             </div>
@@ -175,9 +182,11 @@ const Footer = () => {
                 >
                   <s.icon className="w-5 h-5 mb-1" />
                   <span>{s.name}</span>
-                  <span className="text-primary-foreground/60">
-                    {s.followers}
-                  </span>
+                  {s.showFollowers && (
+                    <span className="text-primary-foreground/60">
+                      {s.followers}
+                    </span>
+                  )}
                 </a>
               ))}
             </div>

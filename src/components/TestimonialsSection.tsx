@@ -71,57 +71,63 @@ const TestimonialsSection = () => {
         </div>
 
         {/* Testimonials — scrollable on mobile */}
-        <div className="relative">
-          <div
-            className="
-              flex md:grid md:grid-cols-2 lg:grid-cols-4 
-              gap-4 
-              overflow-x-auto md:overflow-visible 
-              snap-x snap-mandatory 
-              scrollbar-hide 
-              pb-3
-              -mx-3 px-3
-            "
-          >
-            {testimonials.map((t) => (
-              <Card
-                key={t.id}
-                className="
-                  min-w-[85%] xs:min-w-[75%] sm:min-w-[60%] md:min-w-0
-                  flex-shrink-0
-                  snap-start
-                  bg-white
-                  border border-primary/10
-                  shadow-sm hover:shadow-md
-                  rounded-2xl
-                  transition-all
-                  duration-300
-                "
-              >
-                <CardContent className="p-5 text-center relative">
-                  <Quote className="absolute top-3 left-3 w-5 h-5 text-primary/30" />
-                  <Quote className="absolute bottom-3 right-3 w-5 h-5 text-primary/20 rotate-180" />
+       {/* Testimonials — scrollable on mobile */}
+<div className="relative">
+  <div
+    className="
+      flex md:grid md:grid-cols-2 lg:grid-cols-4
+      gap-4
+      overflow-x-auto md:overflow-visible
+      snap-x snap-mandatory
+      scrollbar-hide
+      pb-4
+      -mx-4 px-4
+    "
+  >
+    {testimonials.map((t) => (
+      <Card
+        key={t.id}
+        className="
+          w-[85%] sm:w-[70%] md:w-auto
+          flex-shrink-0
+          snap-center
+          bg-white
+          border border-primary/10
+          shadow-sm hover:shadow-md
+          rounded-2xl
+          transition-all
+          duration-300
+          mx-auto
+        "
+      >
+        <CardContent className="p-5 text-center relative">
+          <Quote className="absolute top-3 left-3 w-5 h-5 text-primary/30" />
+          <Quote className="absolute bottom-3 right-3 w-5 h-5 text-primary/20 rotate-180" />
 
-                  <div className="flex justify-center mb-2">
-                    {[...Array(t.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-secondary text-secondary" />
-                    ))}
-                  </div>
-
-                  <p className="text-[13px] sm:text-sm text-muted-foreground mb-3 italic leading-relaxed">
-                    “{t.text}”
-                  </p>
-
-                  <div>
-                    <h4 className="font-semibold text-sm sm:text-base text-foreground">{t.name}</h4>
-                    <p className="text-xs text-primary font-medium">{t.business}</p>
-                    <p className="text-xs text-muted-foreground">{t.location}</p>
-                  </div>
-                </CardContent>
-              </Card>
+          {/* Rating */}
+          <div className="flex justify-center mb-2">
+            {[...Array(t.rating)].map((_, i) => (
+              <Star key={i} className="w-4 h-4 fill-secondary text-secondary" />
             ))}
           </div>
-        </div>
+
+          {/* Text */}
+          <p className="text-[13px] sm:text-sm text-muted-foreground mb-3 italic leading-relaxed">
+            “{t.text}”
+          </p>
+
+          {/* Name + Business */}
+          <div>
+            <h4 className="font-semibold text-sm sm:text-base text-foreground">{t.name}</h4>
+            <p className="text-xs text-primary font-medium">{t.business}</p>
+            <p className="text-xs text-muted-foreground">{t.location}</p>
+          </div>
+        </CardContent>
+      </Card>
+    ))}
+  </div>
+</div>
+
       </div>
     </section>
   );

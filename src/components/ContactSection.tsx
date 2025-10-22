@@ -46,10 +46,21 @@ const ContactSection = () => {
     },
   ];
 
-  const socialMedia = [
-    { icon: Instagram, name: "Instagram", followers: "50K+" },
-    { icon: Facebook, name: "Facebook", followers: "25K+" },
-  ];
+ const socialMedia = [
+  {
+    icon: Instagram,
+    name: "Instagram",
+    followers: "8K+ Followers",
+    link: "https://www.instagram.com/dakshayaniiconictrend?igsh=bGNocm93Zzg3YXR4",
+  },
+  {
+    icon: Facebook,
+    name: "Facebook",
+    followers: "7K+ Followers",
+    link: "https://www.facebook.com/share/1SxB8B6W6W/",
+  },
+];
+
 
   return (
     <section id="contact" className="py-20 bg-gradient-to-b from-white to-muted/40">
@@ -124,23 +135,33 @@ const ContactSection = () => {
 
             {/* Social Media */}
             <Card className="bg-white/90 border border-primary/10">
-              <CardHeader>
-                <CardTitle>Follow Us</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-4">
-                  {socialMedia.map((s, i) => (
-                    <div key={i} className="text-center">
-                      <Button variant="outline" size="sm" className="flex items-center gap-2 mb-2">
-                        <s.icon className="w-4 h-4" />
-                        {s.name}
-                      </Button>
-                      <p className="text-xs text-muted-foreground">{s.followers}</p>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+  <CardHeader>
+    <CardTitle>Follow Us</CardTitle>
+  </CardHeader>
+  <CardContent>
+    <div className="flex flex-wrap gap-4">
+      {socialMedia.map((s, i) => (
+        <div key={i} className="text-center">
+          <a
+            href={s.link}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button
+              variant="outline"
+              size="sm"
+              className="flex items-center gap-2 mb-2 hover:bg-primary hover:text-white transition-all"
+            >
+              <s.icon className="w-4 h-4" />
+              {s.name}
+            </Button>
+          </a>
+          <p className="text-xs text-muted-foreground">{s.followers}</p>
+        </div>
+      ))}
+    </div>
+  </CardContent>
+</Card>
           </div>
 
           {/* Right: Contact Form */}
