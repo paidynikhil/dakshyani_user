@@ -45,10 +45,10 @@ const TestimonialsSection = () => {
   ];
 
   const stats = [
-    { number: "10,000+", label: "Happy Resellers" },
-    { number: "50,000+", label: "Products Sold" },
-    { number: "500+", label: "Cities Covered" },
-    { number: "99%", label: "Customer Satisfaction" }
+    { number: "1,00,000+", label: "Happy Resellers" },
+    { number: "55,000+", label: "Products Sold" },
+    { number: "170+", label: "Cities Covered" },
+    { number: "98%", label: "Customer Satisfaction" }
   ];
 
   return (
@@ -105,7 +105,7 @@ const TestimonialsSection = () => {
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-12">
+        {/* <div className="text-center mt-12">
           <p className="text-lg mb-4">Join thousands of successful resellers today!</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="btn-hero px-6 py-3 rounded-lg font-semibold">
@@ -115,7 +115,7 @@ const TestimonialsSection = () => {
               Get Customer Reviews
             </button>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, Users, Truck, Zap, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
-// import heroSaree1 from "@/assets/hero-saree-1.jpg";
+import heroSaree1 from "@/assets/handloom-saree.webp";
+import heroSaree2 from "@/assets/cotton-saree.webp";
+import heroSaree3 from "@/assets/silk-saree.webp";
+
 // import heroLehenga1 from "@/assets/hero-lehenga-1.jpg";
 
 const HeroSection = () => {
@@ -9,22 +12,28 @@ const HeroSection = () => {
 
   const slides = [
     {
-      // image: heroSaree1,
+      image: heroSaree1,
       title: "Premium Sarees Collection",
       subtitle: "Wholesale Prices • Daily New Stock",
       description: "Discover exquisite traditional sarees at unbeatable wholesale rates"
     },
     {
-      // image: heroLehenga1,
+      image: heroSaree2,
       title: "Designer Lehengas",
+      subtitle: "Bridal & Party Wear",
+      description: "Stunning designer lehengas for your special occasions"
+    },
+    {
+      image: heroSaree3,
+      title: "Dresses",
       subtitle: "Bridal & Party Wear",
       description: "Stunning designer lehengas for your special occasions"
     }
   ];
 
   const trustIndicators = [
-    { icon: Users, text: "10,000+ Trusted Resellers" },
-    { icon: Truck, text: "Free Shipping on Bulk Orders" },
+    { icon: Users, text: "1,00,000+ Trusted Resellers" },
+    { icon: Truck, text: "Free Shipping on 3 Orders" },
     { icon: Zap, text: "Fast Dispatch" },
     { icon: Shield, text: "Premium Quality Assured" }
   ];
@@ -36,17 +45,9 @@ const HeroSection = () => {
     return () => clearInterval(timer);
   }, [slides.length]);
 
-  const goToSlide = (index: number) => {
-    setCurrentSlide(index);
-  };
-
-  const goToPrevious = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-  };
-
-  const goToNext = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
-  };
+  const goToSlide = (index: number) => setCurrentSlide(index);
+  const goToPrevious = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  const goToNext = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
 
   return (
     <section className="relative h-screen overflow-hidden">
@@ -59,44 +60,44 @@ const HeroSection = () => {
               index === currentSlide ? "opacity-100" : "opacity-0"
             }`}
           >
+            {/* ✅ Image visible now */}
             <img
-              // src={slide.image}
+              src={slide.image}
               alt={slide.title}
               className="w-full h-full object-cover"
             />
-            <div className="hero-overlay" />
+
+            {/* ✅ Subtle overlay for text contrast */}
+            <div className="absolute inset-0 bg-black/40" />
           </div>
         ))}
 
         {/* Content */}
         <div className="absolute inset-0 flex items-center">
           <div className="container mx-auto px-4">
-            <div className="max-w-2xl animate-fade-in">
-              <h1 className="text-5xl md:text-7xl font-playfair font-bold text-primary-foreground mb-4 leading-tight">
+            <div className="max-w-2xl animate-fade-in text-white">
+              <h1 className="text-5xl md:text-7xl font-playfair font-bold mb-4 leading-tight">
                 {slides[currentSlide].title}
               </h1>
-              <p className="text-xl md:text-2xl text-secondary mb-4 font-semibold">
+              <p className="text-xl md:text-2xl text-yellow-400 mb-4 font-semibold">
                 {slides[currentSlide].subtitle}
               </p>
-              <p className="text-lg text-primary-foreground/90 mb-8">
+              <p className="text-lg text-gray-100 mb-8">
                 {slides[currentSlide].description}
               </p>
-              
+
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
-                <Button size="lg" className="btn-hero">
-                  Shop Wholesale Collection
-                </Button>
-                <Button size="lg" variant="outline" className="btn-secondary-hero">
-                  WhatsApp Catalog
+                <Button size="lg" className="bg-red-700 hover:bg-red-800 text-white">
+                  Shop New Collection
                 </Button>
               </div>
 
               {/* Trust Indicators */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {trustIndicators.map((indicator, index) => (
-                  <div key={index} className="trust-indicator">
+                  <div key={index} className="flex items-center gap-2 text-sm text-gray-200">
                     <indicator.icon className="w-5 h-5" />
-                    <span className="text-sm">{indicator.text}</span>
+                    <span>{indicator.text}</span>
                   </div>
                 ))}
               </div>
@@ -125,7 +126,7 @@ const HeroSection = () => {
               key={index}
               onClick={() => goToSlide(index)}
               className={`w-3 h-3 rounded-full transition-colors ${
-                index === currentSlide ? "bg-secondary" : "bg-white/50"
+                index === currentSlide ? "bg-yellow-400" : "bg-white/50"
               }`}
             />
           ))}

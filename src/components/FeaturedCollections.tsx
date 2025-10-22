@@ -53,7 +53,7 @@ const FeaturedCollections = () => {
   const benefits = [
     "Buy 10+ pieces get additional 5% off",
     "Free shipping on orders above ₹10,000",
-    "Daily new stock updates on WhatsApp",
+    "Daily new stock updates on Website",
     "7-day return policy for defective pieces",
   ];
 
@@ -63,8 +63,7 @@ const FeaturedCollections = () => {
         <div className="text-center mb-12">
           <h2 className="section-title">Featured Collections</h2>
           <p className="section-subtitle">
-            Handpicked premium collections at wholesale prices for resellers and
-            boutique owners
+            Experience Luxury Shopping with Our Curated Premium Collections!
           </p>
         </div>
 
@@ -115,7 +114,7 @@ const FeaturedCollections = () => {
         {/* Wholesale Benefits */}
         <div className="bg-primary rounded-lg p-8 text-center">
           <h3 className="text-2xl font-playfair font-bold text-primary-foreground mb-6">
-            Wholesale Benefits
+            Wholesale Benefits (365 Days Offer)
           </h3>
           <div className="grid md:grid-cols-2 gap-4 mb-6">
             {benefits.map((benefit, index) => (
@@ -124,9 +123,6 @@ const FeaturedCollections = () => {
               </div>
             ))}
           </div>
-          <Button size="lg" className="btn-whatsapp">
-            Get Wholesale Catalog
-          </Button>
         </div>
       </div>
     </section>
